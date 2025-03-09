@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "profile",
+    "slug": "profile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/f1.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "scheme": "profile",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-asset",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "image": "./assets/splash-icon.png"
+        }
+      ],
+      "react-native-edge-to-edge"
+    ],
+    "splash": {
+      "image": "./assets/f1.png",
+      "resizeMode": "contain",
+      "backgroundColor": "ffffff"
+    }
+  }
+}
