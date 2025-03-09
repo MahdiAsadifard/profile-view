@@ -4,8 +4,9 @@ import Config from "../../config.json";
 
 export const IsAndroid = Platform.OS === "android";
 
-export const GetByUsername = async (username: string) => {
-    const response= await fetch(`https://api.github.com/users/${username}`, {
+export const api_call = async(url: string) => {
+    const _url =  `${Config.octokit.base_url}${url}`;
+    const response = await fetch(_url, {
         headers: {
             Accept: "application/vnd.github.v3+json",
             Authorization: Config.octokit.auth

@@ -4,7 +4,7 @@ import {StyleSheet, View, Text} from "react-native";
 
 
 import SearchBar from "../../components/searchBar";
-import { GetByUsername } from "../../tools/utils";
+import { api_call } from "../../tools/utils";
 
 interface IProps {
     navigation?: any;
@@ -16,8 +16,9 @@ const Home: React.FunctionComponent<IProps> = ({
     route
 }): React.ReactNode => {
 
+    // e: usename
     const onSearchbarCallback = async (e: string) => {
-        const response = await GetByUsername(e);
+        const response = await api_call(`users/${e}`);
         if(response.status === "404") {
             navigation.navigate("NotFound");
             return;

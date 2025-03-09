@@ -3,9 +3,11 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "./screens/Home";
 import  Profile  from "./screens/Profile";
+import  FollowersList  from "./screens/FollowersList";
 import { NotFound } from "./screens/NotFound";
 
 import { Colors } from "../tools/styles";
+
 
 const Stack = createStackNavigator();
 
@@ -16,6 +18,14 @@ const StackContainer = () => {
             screenOptions= {{
                 cardStyle: {
                     backgroundColor: Colors.white
+                },
+                headerTitleStyle: {
+                    alignSelf: 'center'
+                },
+                headerTitleAlign: 'center',
+                headerTintColor: Colors.white,
+                headerStyle: {
+                    backgroundColor: Colors.green2
                 }
             }}
         >
@@ -24,10 +34,19 @@ const StackContainer = () => {
                     headerShown: false,
                 }}
             ></Stack.Screen>
-            <Stack.Screen name="Profile" component={Profile} ></Stack.Screen>
+            <Stack.Screen name="Profile" component={Profile}
+                options={({ route })=>({
+                    title: route.params?.user.name
+                })}
+            ></Stack.Screen>
+            <Stack.Screen name="FollowersList" component={FollowersList}
+                options={({ route })=>({
+                    title: route.params?.parent
+                })}
+            ></Stack.Screen>
             <Stack.Screen name="NotFound" component={NotFound}
                 options={{
-                    headerTitle: 'User Not Found'
+                    headerTitle: 'Not Found'
                 }}
             ></Stack.Screen>
         </Stack.Navigator>
