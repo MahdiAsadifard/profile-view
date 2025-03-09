@@ -9,3 +9,4 @@
 5. To switch to ExpoGo press `s` on keyboard 
 6. Now you can run on Android emulator by pressing `a` on keyboard
 
+Link to sample viedo [here](https://drive.google.com/file/d/1gT00ypzXHpfz1HgqEH5IyWoyNh1MMrEk/view?usp=sharing)
