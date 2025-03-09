@@ -1,6 +1,6 @@
 
 import React from "react";
-import {StyleSheet, View, Text} from "react-native";
+import {StyleSheet, View, Text, Image} from "react-native";
 
 
 import SearchBar from "../../components/searchBar";
@@ -30,8 +30,16 @@ const Home: React.FunctionComponent<IProps> = ({
 
     return(
         <View style={[styles.conatiner, styles.padding]}>
+            <View style={styles.conatiner}></View>
+            <Image
+                source={require('../../../assets/f2.png')}
+                resizeMode='center'
+                style= {styles.logo}
+            />
+            <View style={styles.conatiner}></View>
             <Text style={[styles.searchText]}>Search</Text>
             <SearchBar callback={onSearchbarCallback} />
+            <View style={{flex: 3}}></View>
         </View>        
     );
 };
@@ -39,7 +47,7 @@ const Home: React.FunctionComponent<IProps> = ({
 const styles = StyleSheet.create({
     conatiner: {
         flex: 1,
-        justifyContent: 'center'
+        //justifyContent: 'center'
     },
     padding: {
         padding: 10
@@ -47,6 +55,11 @@ const styles = StyleSheet.create({
     searchText: {
         fontSize: 40
     },
+    logo: {
+        width: 100,
+        height: 100,
+        alignSelf:'center'
+    }
 });
 
 export default Home;
